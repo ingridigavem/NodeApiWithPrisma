@@ -1,6 +1,6 @@
 name: Run Unit Tests
 
-on: [push] # DEFINE COMO SERÁ ATIVADO OS JOBS - 'PUSH' = toda vez q houver um push no repositrio
+on: [push] # DEFINE COMO SERÁ ATIVADO OS JOBS - 'PUSH' = toda vez q houver um push no repositorio
 
 jobs:
   run-unit-tests:
