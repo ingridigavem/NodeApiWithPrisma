@@ -1,0 +1,22 @@
+name: Run Unit Tests
+
+on: [push] # DEFINE COMO SERÁ ATIVADO OS JOBS - 'PUSH' = toda vez q houver um push no repositrio
+
+jobs:
+  run-unit-tests:
+    name: Run Unit Tests
+    runs-on:
+      ubuntu-latest # maquina onde vai ser executado
+
+
+      # STEPS - define oq quer q o job execute, o passo a passo do processo completo desde baixar a aplicacao até a execucao dos comandos
+    steps:
+      - uses: actions/checkout@v3 #baixa o codigo dentro da maquina
+      - uses: actions/setup-node@v3 #configura o node na maquina
+        with:
+          node-version: 18
+          cache: "npm" # cria um cache das dependencias caso nao tenha mudancas ele reaproveita
+
+      - run: npm ci # apenas instala as dependencias sem fazer perguntas nenhuma no terminal ou alterar package json
+
+      - run: npm run test
