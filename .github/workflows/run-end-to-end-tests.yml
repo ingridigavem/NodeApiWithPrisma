@@ -13,8 +13,8 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRESQL_USERNAME: dockerpostgresql
-          POSTGRESQL_PASSWORD: dockerpasswd
+          POSTGRESQL_USERNAME: docker
+          POSTGRESQL_PASSWORD: docker
           POSTGRESQL_DATABASE: apinode
 
     steps:
